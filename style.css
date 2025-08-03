@@ -17,7 +17,15 @@ h1, h2 {
   color: #1b5f8c;
   margin-bottom: 10px;
 }
+/* Specific Font Size for h1 */
+h1 {
+  font-size: 2rem; 
+}
 
+/* Specific Font Size for h2 */
+h2 {
+  font-size: 1.5rem; 
+}
 ul {
   list-style-type: square;
   padding-left: 20px;
