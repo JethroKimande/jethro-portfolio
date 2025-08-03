@@ -9,6 +9,7 @@ This portfolio was built for the **PLP Academy Portfolio Challenge – July 2025
 ## 🔗 Quick Access
 
 - 📂 [Download My CV](assets/JETHRO_KIMANDE_CV_AUG_2025.pdf)
+- 📂 [Download My Recent Transcript](assets/JETHRO_MSc_Transcipt.pdf)
 - 💼 [LinkedIn](https://www.linkedin.com/in/jethro-kimande-77644195/)
 - 🧪 [GitHub](https://github.com/JethroKimande)
 - 🌐 [Live Site](https://jethrokimande.github.io/jethro-portfolio/)
