@@ -1,128 +1,513 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jethro Kimande's portfolio showcasing machine learning projects, IoT systems, Predictive Modeling, and Tech Innovations.">
-    <title>Jethro Kimande | Portfolio</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+  <meta charset="utf-8" />
+  <title>Jethro Kimande — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Jethro Kimande — Machine Learning Engineer & Data Researcher from Nairobi, Kenya. Portfolio of projects, skills, awards, research impact, and contact." />
+  <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-    <!-- 📝 About Me Section -->
-    <section id="about">
-        <h1> 📝Hello, I'm Jethro Kimande</h1>
-        <p class="justified-text">Machine Learning Engineer & Data Researcher from Nairobi, Kenya. I'm passionate about
-            data modeling and research in machine learning, IoT systems, and predictive modeling. Growing up in a
-            developing country, I have had an opportunity to witness the impacts of relying on little to no data in
-            making industrial and business decisions. I desire to assist in popularising emerging technologies and
-            formulating new strategies that advance the prediction performance of machine learning algorithms in
-            research and development and building tech solutions that are globally accessible.</p>
-        <p>Skilled in Python, R, MATLAB, and IoT systems. Currently building an open-source LinkedIn bot to share
-            satellite pollution data weekly.</p>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="#home">Jethro Kimande</a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu" />
+      <label class="hamburger" for="nav-toggle" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#training">Training</a>
+        <a href="#skills">Skills</a>
+        <a href="#interests">Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#research">Research</a>
+        <a href="#repos">Repositories</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn--sm" href="assets/JETHRO_KIMANDE_CV_AUG_2025.pdf" download>Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero__text">
+        <h1>Machine Learning Engineer & Data Researcher</h1>
+        <p class="lead">
+          Based in Nairobi, Kenya. I focus on data modeling, IoT systems, and predictive modeling — building practical,
+          accessible tech and contributing to open source. Explore featured work and a full list of repositories below.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn btn--ghost" href="https://github.com/JethroKimande" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="hero__avatar">
+        <img src="https://github.com/JethroKimande.png" alt="Portrait of Jethro Kimande" loading="lazy" />
+      </div>
     </section>
 
-    <!-- 🎓 Education -->
-    <section id="education">
-        <h2> 🎓Education</h2>
-        <ul>
-            <li><strong>MSc Nuclear Science</strong> – University of Nairobi (2017–2021)</li>
-            <li><strong>BSc Electrical & Electronic Engineering</strong> – Dedan Kimathi University (2011–2016)</li>
-        </ul>
-        <p><a href="assets/JETHRO_KIMANDE_CV_AUG_2025.pdf" download>📄 Download My CV</a></p
-        <p><a href="assets/JETHRO_MSc_Transcipt.pdf" download>📄 Download My Recent Transcript</a></p>
+    <section id="about" class="container section">
+      <h2>📝 About Me</h2>
+      <p class="justified-text">
+        Machine Learning Engineer & Data Researcher from Nairobi, Kenya. I'm passionate about data modeling and research
+        in machine learning, IoT systems, and predictive modeling. Growing up in a developing country, I have had an opportunity
+        to witness the impacts of relying on little to no data in making industrial and business decisions. I desire to assist
+        in popularising emerging technologies and formulating new strategies that advance the prediction performance of machine
+        learning algorithms in research and development and building tech solutions that are globally accessible.
+      </p>
+      <p>Skilled in Python, R, MATLAB, and IoT systems. Currently building an open-source LinkedIn bot to share satellite pollution data weekly.</p>
     </section>
 
-    <!-- 💻 Skills -->
-    <section id="skills">
-        <h2>💻Skills</h2>
-        <ul>
-            <li>Machine Learning: TensorFlow, scikit-learn</li>
-            <li>Programming: Python, MATLAB, SQL, R</li>
-            <li>Tools: Databricks, Kafka, React Native, Firebase</li>
-            <li>Specialties: Infrared Thermography, IoT Systems, DSP, NDT</li>
-        </ul>
+    <section id="education" class="container section">
+      <h2>🎓 Education</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="item__title">Power Learn Project Africa — Software Development Fellow (In Progress)</div>
+          <div class="item__meta">Pan-African Fellowship Program • July 2025 Cohort</div>
+          <ul class="bullets">
+            <li>Currently undertaking intensive training in Python, Dart, Flutter, databases, and web technologies.</li>
+            <li>Learning through project-based modules focused on digital innovation, entrepreneurship, and real-world problem solving.</li>
+            <li>Part of the #1MillionDevs4Africa initiative empowering youth across the continent with future-ready tech skills.</li>
+            <li>Engaging in collaborative development, mentorship, and community-driven impact projects.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item__title">MSc. Nuclear Science</div>
+          <div class="item__meta">University of Nairobi • 2017–2021</div>
+          <ul class="bullets">
+            <li><strong>Thesis:</strong> Estimating the temperature variations in three-phase distribution transformers using infrared thermography.</li>
+            <li>Developed MATLAB algorithms to analyze thermograms, improving fault prediction accuracy by 25%.</li>
+            <li>Published a conference paper at the 3rd Annual Architecture & Engineering Conference (2020).</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item__title">BSc. Electrical & Electronic Engineering</div>
+          <div class="item__meta">Dedan Kimathi University of Technology • 2011–2016</div>
+          <ul class="bullets">
+            <li><strong>Project:</strong> Wildlife Monitoring and Data Acquisition Using Camera Traps and Raspberry Pi.</li>
+            <li>Built a real-time data streaming system with Kafka and TensorFlow.</li>
+            <li>Implemented a camera trap using OpenCV and a Cascaded Haar classifier.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="downloads">
+        <a class="btn btn--ghost" href="assets/JETHRO_KIMANDE_CV_AUG_2025.pdf" download>📄 Download My CV</a>
+        <a class="btn btn--ghost" href="assets/JETHRO_MSc_Transcipt.pdf" download>📄 Download My Recent Transcript</a>
+      </div>
     </section>
 
-    <!-- 💡 Interests -->
-    <section id="interests">
-        <h2>💡Interests</h2>
-        <ul>
-            <li>Machine Learning for Computational Physics and Data Modeling </li>
-            <li>Non Destructive Tessting</li>
-            <li>Digital Signal Processing</li>
-            <li>Image Processing</li>
-            <li>Air Quality monitoring</li>
-            <li>Software Develop -SaaS</li>
-            <li> Research Collaboration</li>
-        </ul>
+    <section id="training" class="container section">
+      <div class="section-head">
+        <h2>📚 Attended Training & Workshops</h2>
+        <p class="muted">Selected courses, workshops, and micro-trainings.</p>
+      </div>
 
+      <div class="grid">
+        <article class="card">
+          <header class="card__head">
+            <h3>Career Essentials in Software Development</h3>
+            <div class="tags">
+              <span class="tag">Microsoft & LinkedIn Learning</span>
+              <span class="tag">Jul 09, 2025 • 8h 20m</span>
+            </div>
+          </header>
+          <p>Programming, Software Development</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Introduction to Career Skills in Software Development</h3>
+            <div class="tags">
+              <span class="tag">LinkedIn Learning</span>
+              <span class="tag">Jul 04, 2025 • 2h 2m</span>
+            </div>
+          </header>
+          <p>Software Development, Career Management, Tech Career Skills</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Programming Foundations: Beyond the Fundamentals</h3>
+            <div class="tags">
+              <span class="tag">LinkedIn Learning</span>
+              <span class="tag">Jul 07, 2025 • 3h 6m</span>
+            </div>
+          </header>
+          <p>Programming</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Programming Foundations: Fundamentals</h3>
+            <div class="tags">
+              <span class="tag">LinkedIn Learning</span>
+              <span class="tag">Jul 06, 2025 • 3h 11m</span>
+            </div>
+          </header>
+          <p>Programming</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Raspberry Pi Microcomputer Training Workshop on Real-Time Programming</h3>
+            <div class="tags">
+              <span class="tag">UoN, Uppsala University, TU Delft</span>
+              <span class="tag">Feb 11–15, 2019</span>
+            </div>
+          </header>
+          <p>IoT & AI intro, Raspberry Pi, OOP in Python, Sensors & Actuators, Interrupts & Threading, Wi‑Fi Communication, hands‑on practicals</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Mini‑Course on Statistical Distributions in Particle Technology</h3>
+            <div class="tags">
+              <span class="tag">UoN, Uppsala Universitet</span>
+              <span class="tag">Jun 12–13, 2017</span>
+            </div>
+          </header>
+          <p>Basic concepts; distributions (normal, log‑normal, etc.); presentations; data analysis; goodness‑of‑fit; applications; Excel statistics</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Raspberry Pi Microcomputer Training Workshop on Real-Time Programming</h3>
+            <div class="tags">
+              <span class="tag">UoN, Uppsala University, TU Delft</span>
+              <span class="tag">Feb 13–16, 2018</span>
+            </div>
+          </header>
+          <p>Raspberry Pi, OOP in Python, Sensors & Actuators, Interrupts & Threading, Bluetooth Communication, hands‑on practicals</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>"Nuclear Fuel Cycle, and Design of Reactor and Core"</h3>
+            <div class="tags">
+              <span class="tag">UoN INST & Korea Nuclear Association</span>
+              <span class="tag">Jun 20–27, 2018</span>
+            </div>
+          </header>
+          <p>Nuclear fuel cycle intro; power generation principles; front‑end/back‑end fuel management; spent fuel; radioactive waste; decommissioning; Korean experiences</p>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Optimization Onramp</h3>
+            <div class="tags">
+              <span class="tag">MathWorks Training Services</span>
+              <span class="tag">Nov 10, 2022</span>
+            </div>
+          </header>
+          <p>Optimization techniques (self‑paced). Formulation of optimization problems in MATLAB; linear and nonlinear optimization.</p>
+        </article>
+      </div>
     </section>
 
-    <!-- 🛠️ Projects -->
-    <section id="projects">
-        <h2> 🛠️Projects</h2>
-        <ul>
-            <li><strong>Climate-IoT LinkedIn Bot</strong>: Automates pollution data posts weekly from satellite APIs. –
-                <a href="https://github.com/JethroKimande/climate-iot-linkedin-bot" target="_blank">Under Devlopment on
-                    GitHub</a>
-            </li>
-            <li><strong>Property Management System</strong>: Web app for managing property details and tenant
-                information. – <a href="https://rent-roll-nexus-admin.onrender.com/" target="_blank">View Project</a>
-            </li>
-            <li><strong>Loan Default Prediction</strong>: ML model with ROC/AUC analysis – <a
-                    href="https://colab.research.google.com/drive/1naDPMkGjV-8vVnbX9b-32aFB5gNFQd_S?usp=sharing"
-                    target="_blank">View on
-                    Google Colab</a></li>
-            <li><strong>EEG DSP Analysis</strong>: Oddball paradigm insights for "N" word among Black Americans using
-                MATLAB – <a href="https://www.fiverr.com/senmiles?public_mode=true" target="_blank">View on Fiverr</a>
-            </li>
-            <li><strong>Data Collection App</strong>: A simple data collection application built with C and HTML/JavaScript. – <a
-                    href="https://dataverveafrica.onrender.com/" target="_blank">View Project</a></li>
-            <li><strong>IoT Auto Greenhouse</strong>: Real-time crop condition monitoring – showcased at Nairobi Trade
-                Fair. – <a
-                    href="https://scontent.fnbo13-1.fna.fbcdn.net/v/t1.6435-9/43326475_1858185110932612_4270674870779510784_n.jpg?stp=c103.0.673.673a_dst-jpg_s206x206_tt6&_nc_cat=105&ccb=1-7&_nc_sid=714c7a&_nc_eui2=AeE4XncTSQpi3agaHv8OkxTPAsRNW-HbX_YCxE1b4dtf9rV4WQr6ejzQPBSPKXKnNUnthpZDjuaMk2HG4ebz2Dc0&_nc_ohc=msJ0pLgtCf8Q7kNvwFo8bzX&_nc_oc=AdmN_GPgchkWLUjG4BeasYGT4G6NXVKbW8BkV28oLzs3cL-N1lnwM9ncPwkwu5sCR_A&_nc_zt=23&_nc_ht=scontent.fnbo13-1.fna&_nc_gid=0Docz_tawMhi5kOYMN7jvw&oh=00_AfQKCHz_-XQM53dG4g3bEea0T3VunVBQQcjqYvU7bE4b5g&oe=68B6B06F"target="_blank" >
-                    Featured in a Local Newspaper</a></li>
-            <li><strong>Data Scraping from DataBase</strong>: Built a database of movie-related information by scraping
-                The Movie Database (TMDB). – <a
-                    href="https://colab.research.google.com/drive/11nctOZ3zkuqE9nP_VpLQ96w-VD4cZyYL?usp=sharing" target="_blank">View
-                    Project</a></li>
-            <li><strong>Scarping Data on Linkedin</strong>: Web-Scapping and nalyzing job market from LinkedIn. – <a
-                    href="https://colab.research.google.com/drive/1LZ2QL9NKFj5etl0kM8D_fsitST1BpTC8?usp=sharing" target="_blank">View
-                    Project</a></li>
-            <li><strong>Supervised ML Robot Using Raspberry Pi</strong>: A machine learning model used for an autonomous
-                robot to pick and place objects. – <a
-                    href="https://web.facebook.com/kjethro1/videos/2038746959543092" target="_blank">Watch the video</a></li>
-        </ul>
+    <section id="skills" class="container section">
+      <h2>💻 Skills</h2>
+      <div class="grid grid--2">
+        <div>
+          <h3>Machine Learning</h3>
+          <ul class="bullets">
+            <li>TensorFlow, scikit-learn</li>
+          </ul>
+          <h3>Programming</h3>
+          <ul class="bullets">
+            <li>Python, MATLAB, SQL, R</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul class="bullets">
+            <li>Databricks, Kafka, React Native, Firebase</li>
+          </ul>
+          <h3>Specialties</h3>
+          <ul class="bullets">
+            <li>Infrared Thermography, IoT Systems, DSP, NDT</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- 🏆 Awards & Recognitions -->
-    <section id="awards">
-        <h2>🏆Awards</h2>
-        <ul>
-            <li><strong>Power Learn Project Fellow</strong> – July 2025<a
-                    href="https://media.licdn.com/dms/image/v2/D4D22AQFf9iRWsbd74w/feedshare-shrink_800/B4DZfQfvpVG8Ag-/0/1751549673967?e=1756944000&v=beta&t=Pq8m3_uiCFGBTOGRZk8-7wV30ep9Yy31XoblsYn6xS4"
-                    target="_blank"> View Award </a> </li>
-            <li><strong>Master’s Scholarship</strong>, Nuclear Power & Energy Agency (NuPEA)</li>
-            <li><strong>Recognition for Innovation in Embedded Systems and Non-Destructive Testing</strong> at UON@50,
-                University of Nairobi (IoT Systems) <a
-                    href="https://nuclear-sciences.uonbi.ac.ke/latest-news/celebration-outstanding-achievers-jethro-kimande"
-                    target="_blank"> View Recognition </a> </li>
-        </ul>
+    <section id="interests" class="container section">
+      <h2>💡 Interests</h2>
+      <ul class="bullets">
+        <li>Machine Learning for Computational Physics and Data Modeling</li>
+        <li>Non-Destructive Testing</li>
+        <li>Digital Signal Processing</li>
+        <li>Image Processing</li>
+        <li>Air quality monitoring</li>
+        <li>Software Development (SaaS)</li>
+        <li>Research Collaboration</li>
+      </ul>
     </section>
 
+    <section id="projects" class="container section">
+      <div class="section-head">
+        <h2>🛠️ Featured Projects</h2>
+        <p class="muted">Curated highlights. See more in Repositories below.</p>
+      </div>
 
-    <!-- 📬 Contact Form -->
-    <section id="contact">
-        <h2>📬Contact Me</h2>
-        <form action="https://formspree.io/f/xvgqbvdw" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required><br>
-            <input type="email" name="email" placeholder="Your Email" required><br>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
-            <button type="submit">Send Message</button>
-        </form>
+      <div class="grid">
+        <article class="card">
+          <header class="card__head">
+            <h3>Climate‑IoT LinkedIn Bot</h3>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">API</span><span class="tag">Automation</span><span class="tag">IoT</span>
+            </div>
+          </header>
+          <p>Automates weekly pollution data posts using satellite APIs, making air‑quality insights more accessible.</p>
+          <div class="card__links">
+            <a class="link" href="https://github.com/JethroKimande/climate-iot-linkedin-bot" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Property Management System</h3>
+            <div class="tags">
+              <span class="tag">Web App</span><span class="tag">CRUD</span><span class="tag">Admin</span>
+            </div>
+          </header>
+          <p>Web application to manage property details and tenant information with a clean admin interface. For exploration Username: admin@example.com
+                password: Admin123!
+            </p>
+          <div class="card__links">
+            <a class="link" href="https://rent-roll-nexus-admin.onrender.com/" target="_blank" rel="noopener">Live</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Loan Default Prediction</h3>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">scikit‑learn</span><span class="tag">Classification</span>
+            </div>
+          </header>
+          <p>Supervised ML model with ROC/AUC analysis for identifying potential loan defaults.</p>
+          <div class="card__links">
+            <a class="link" href="https://colab.research.google.com/drive/1naDPMkGjV-8vVnbX9b-32aFB5gNFQd_S?usp=sharing" target="_blank" rel="noopener">Notebook</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>EEG DSP Analysis</h3>
+            <div class="tags">
+              <span class="tag">MATLAB</span><span class="tag">DSP</span><span class="tag">EEG</span>
+            </div>
+          </header>
+          <p>Oddball paradigm analysis exploring responses to an offensive word among Black Americans.</p>
+          <div class="card__links">
+            <a class="link" href="https://www.fiverr.com/senmiles?public_mode=true" target="_blank" rel="noopener">Details</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Data Collection App</h3>
+            <div class="tags">
+              <span class="tag">C</span><span class="tag">HTML</span><span class="tag">JavaScript</span>
+            </div>
+          </header>
+          <p>Lightweight app for structured data collection with a simple web front‑end.</p>
+          <div class="card__links">
+            <a class="link" href="https://dataverveafrica.onrender.com/" target="_blank" rel="noopener">Live</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>IoT Auto Greenhouse</h3>
+            <div class="tags">
+              <span class="tag">IoT</span><span class="tag">Raspberry Pi</span><span class="tag">Sensors</span>
+            </div>
+          </header>
+          <p>Real‑time crop condition monitoring; showcased at the Nairobi Trade Fair.</p>
+          <div class="card__links">
+            <a class="link" href="https://scontent.fnbo13-1.fna.fbcdn.net/v/t1.6435-9/43326475_1858185110932612_4270674870779510784_n.jpg?stp=c103.0.673.673a_dst-jpg_s206x206_tt6&_nc_cat=105&ccb=1-7&_nc_sid=714c7a&_nc_eui2=AeE4XncTSQpi3agaHv8OkxTPAsRNW-HbX_YCxE1b4dtf9rV4WQr6ejzQPBSPKXKnNUnthpZDjuaMk2HG4ebz2Dc0&_nc_ohc=msJ0pLgtCf8Q7kNvwFo8bzX&_nc_oc=AdmN_GPgchkWLUjG4BeasYGT4G6NXVKbW8BkV28oLzs3cL-N1lnwM9ncPwkwu5sCR_A&_nc_zt=23&_nc_ht=scontent.fnbo13-1.fna&_nc_gid=0Docz_tawMhi5kOYMN7jvw&oh=00_AfQKCHz_-XQM53dG4g3bEea0T3VunVBQQcjqYvU7bE4b5g&oe=68B6B06F" target="_blank" rel="noopener">Feature</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>TMDB Data Scraping</h3>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Web Scraping</span><span class="tag">TMDB</span>
+            </div>
+          </header>
+          <p>Built a dataset of movie metadata by scraping The Movie Database (TMDB).</p>
+          <div class="card__links">
+            <a class="link" href="https://colab.research.google.com/drive/11nctOZ3zkuqE9nP_VpLQ96w-VD4cZyYL?usp=sharing" target="_blank" rel="noopener">Notebook</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>LinkedIn Job‑Market Scraper</h3>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Web Scraping</span><span class="tag">Jobs</span>
+            </div>
+          </header>
+          <p>Scrapes and analyzes LinkedIn job‑market data for insights and trends.</p>
+          <div class="card__links">
+            <a class="link" href="https://colab.research.google.com/drive/1LZ2QL9NKFj5etl0kM8D_fsitST1BpTC8?usp=sharing" target="_blank" rel="noopener">Notebook</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <h3>Supervised ML Robot (Raspberry Pi)</h3>
+            <div class="tags">
+              <span class="tag">Raspberry Pi</span><span class="tag">Computer Vision</span><span class="tag">Robotics</span>
+            </div>
+          </header>
+          <p>Autonomous pick‑and‑place robot powered by a supervised ML model.</p>
+          <div class="card__links">
+            <a class="link" href="https://web.facebook.com/kjethro1/videos/2038746959543092" target="_blank" rel="noopener">Video</a>
+          </div>
+        </article>
+      </div>
     </section>
+
+    <section id="awards" class="container section">
+      <h2>🏆 Awards</h2>
+      <ul class="bullets">
+        <li>
+          <strong>Power Learn Project Fellow</strong> — July 2025 —
+          <a href="https://media.licdn.com/dms/image/v2/D4D22AQFf9iRWsbd74w/feedshare-shrink_800/B4DZfQfvpVG8Ag-/0/1751549673967?e=1756944000&v=beta&t=Pq8m3_uiCFGBTOGRZk8-7wV30ep9Yy31XoblsYn6xS4" target="_blank" rel="noopener">View Award</a>
+        </li>
+        <li><strong>Master’s Scholarship</strong>, Nuclear Power & Energy Agency (NuPEA)</li>
+        <li>
+          <strong>Recognition for Innovation in Embedded Systems and Non-Destructive Testing</strong> at UON@50, University of Nairobi (IoT Systems) —
+          <a href="https://nuclear-sciences.uonbi.ac.ke/latest-news/celebration-outstanding-achievers-jethro-kimande" target="_blank" rel="noopener">View Recognition</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Research Impact: Static stats (no scraping), KNU-style metric cards -->
+    <section id="research" class="container section">
+      <div class="section-head">
+        <h2>Research Impact</h2>
+        <p class="muted">
+          Metrics for the publication:
+          <a href="https://www.researchgate.net/publication/348535061_Application_of_Infrared_Thermography_in_Fault_Detection_and_Preventive_Maintenance_in_Three-Phase_Distribution_Transformers" target="_blank" rel="noopener">
+            Application of Infrared Thermography in Fault Detection and Preventive Maintenance in Three‑Phase Distribution Transformers
+          </a>
+        </p>
+      </div>
+
+      <div class="metrics-grid knu-metrics">
+        <div class="metric-card">
+          <div class="metric-value">13.5</div>
+          <div class="metric-label">Research Interest Score</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">4</div>
+          <div class="metric-label">Citations</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">830</div>
+          <div class="metric-label">Reads</div>
+        </div>
+      </div>
+
+      <div class="stats-actions">
+        <a class="btn btn--ghost" href="https://www.researchgate.net/publication/348535061_Application_of_Infrared_Thermography_in_Fault_Detection_and_Preventive_Maintenance_in_Three-Phase_Distribution_Transformers/stats" target="_blank" rel="noopener">View on ResearchGate</a>
+        <button id="cite-open" class="btn" type="button">Cite</button>
+      </div>
+
+      <!-- Cite overlay -->
+      <div id="cite-overlay" class="overlay" hidden aria-hidden="true">
+        <div class="overlay__panel" role="dialog" aria-labelledby="cite-title" aria-modal="true">
+          <div class="overlay__head">
+            <h3 id="cite-title">Cite this publication</h3>
+            <button id="cite-close" class="icon-btn" aria-label="Close">×</button>
+          </div>
+          <div id="cite-content" class="cite-grid">
+            <div class="cite-card">
+              <div class="cite-head">
+                <strong>APA</strong>
+                <button class="copy-btn" data-format="apa">Copy</button>
+              </div>
+              <pre id="cite-apa" class="cite-text">Loading…</pre>
+            </div>
+            <div class="cite-card">
+              <div class="cite-head">
+                <strong>MLA</strong>
+                <button class="copy-btn" data-format="mla">Copy</button>
+              </div>
+              <pre id="cite-mla" class="cite-text">Loading…</pre>
+            </div>
+            <div class="cite-card">
+              <div class="cite-head">
+                <strong>Harvard</strong>
+                <button class="copy-btn" data-format="harvard">Copy</button>
+              </div>
+              <pre id="cite-harvard" class="cite-text">Loading…</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="repos" class="container section">
+      <div class="section-head">
+        <h2>Key Repositories</h2>
+        <p class="muted">Auto-fetched from GitHub.</p>
+      </div>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search repositories..." />
+        <select id="sort">
+          <option value="updated">Recently updated</option>
+          <option value="stars">Most stars</option>
+          <option value="name">Name (A–Z)</option>
+        </select>
+        <label class="check"><input id="includeForks" type="checkbox" /> Include forks</label>
+        <label class="check"><input id="includeArchived" type="checkbox" /> Include archived</label>
+        <span id="count" class="muted"></span>
+      </div>
+
+      <div id="repo-grid" class="grid"></div>
+      <div id="repo-empty" class="empty" hidden>No repositories match your filters.</div>
+      <div id="repo-error" class="error" hidden>Could not load repositories. Try again later.</div>
+
+      <noscript>
+        <p class="muted">Enable JavaScript to see the repository list, or visit my GitHub profile:
+          <a href="https://github.com/JethroKimande" target="_blank" rel="noopener">github.com/JethroKimande</a>.
+        </p>
+      </noscript>
+    </section>
+
+    <section id="contact" class="container section">
+      <h2>📬 Contact Me</h2>
+      <form class="contact-form" action="https://formspree.io/f/xvgqbvdw" method="POST">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2025 Jethro Kimande</span>
+    </div>
+  </footer>
 </body>
-
 </html>
