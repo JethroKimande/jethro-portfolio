@@ -1,6 +1,10 @@
 // Portfolio scripts
 // - Repo grid (with filters and exclusions)
 // - Research citations popup (APA/MLA/Harvard), static metrics (no scraping)
+// - Social sharing functionality
+// - Enhanced contact form with AI features
+// - Project demo modals
+// - Performance optimizations
 
 // ----------------- Repo grid -----------------
 const USER = "JethroKimande";
@@ -314,3 +318,414 @@ function spanLang(lang){
   s.append(text(lang));
   return s;
 }
+
+// ----------------- Social Sharing -----------------
+function copyPortfolioUrl() {
+  const url = window.location.href;
+  copyToClipboard(url).then(() => {
+    // Show success feedback
+    const btn = document.querySelector('.copy-url');
+    const originalIcon = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i>';
+    btn.style.background = 'var(--accent)';
+    btn.style.color = 'white';
+    btn.style.borderColor = 'var(--accent)';
+    
+    setTimeout(() => {
+      btn.innerHTML = originalIcon;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  }).catch(() => {
+    alert('Failed to copy URL. Please copy manually: ' + url);
+  });
+}
+
+// ----------------- Enhanced Contact Form -----------------
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const messageTextarea = document.getElementById('message');
+  const charCount = document.getElementById('charCount');
+  const submitBtn = document.getElementById('submitBtn');
+  const formStatus = document.getElementById('formStatus');
+  
+  if (!form) return;
+  
+  // Character counter
+  if (messageTextarea && charCount) {
+    messageTextarea.addEventListener('input', () => {
+      const count = messageTextarea.value.length;
+      charCount.textContent = count;
+      
+      if (count > 900) {
+        charCount.style.color = 'var(--warn)';
+      } else if (count > 800) {
+        charCount.style.color = 'var(--accent)';
+      } else {
+        charCount.style.color = 'var(--muted)';
+      }
+    });
+  }
+  
+  // Form submission with enhanced UX
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Show loading state
+    submitBtn.classList.add('loading');
+    submitBtn.disabled = true;
+    formStatus.style.display = 'none';
+    
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+        formStatus.className = 'form-status success';
+        formStatus.style.display = 'block';
+        form.reset();
+        charCount.textContent = '0';
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      formStatus.textContent = 'Sorry, there was an error sending your message. Please try again or contact me directly.';
+      formStatus.className = 'form-status error';
+      formStatus.style.display = 'block';
+    } finally {
+      submitBtn.classList.remove('loading');
+      submitBtn.disabled = false;
+    }
+  });
+  
+  // Auto-resize textarea
+  if (messageTextarea) {
+    messageTextarea.addEventListener('input', () => {
+      messageTextarea.style.height = 'auto';
+      messageTextarea.style.height = messageTextarea.scrollHeight + 'px';
+    });
+  }
+}
+
+// ----------------- Project Demo Modals -----------------
+function showProjectDemo(projectId) {
+  const demos = {
+    'climate-bot': {
+      title: 'Climate-IoT LinkedIn Bot',
+      content: `
+        <div class="demo-content">
+          <h4>How it works:</h4>
+          <ol>
+            <li>Fetches air quality data from satellite APIs</li>
+            <li>Processes and analyzes pollution levels</li>
+            <li>Generates informative posts with visualizations</li>
+            <li>Automatically posts to LinkedIn weekly</li>
+          </ol>
+          <h4>Tech Stack:</h4>
+          <ul>
+            <li>Python for data processing</li>
+            <li>LinkedIn API for posting</li>
+            <li>Satellite data APIs for air quality</li>
+            <li>APScheduler for automation</li>
+          </ul>
+          <p><strong>Impact:</strong> Making environmental data more accessible to the public.</p>
+        </div>
+      `
+    },
+    'property-mgmt': {
+      title: 'Property Management System',
+      content: `
+        <div class="demo-content">
+          <h4>Features:</h4>
+          <ul>
+            <li>Property listing and management</li>
+            <li>Tenant information tracking</li>
+            <li>Rent collection monitoring</li>
+            <li>Admin dashboard with analytics</li>
+          </ul>
+          <h4>Demo Credentials:</h4>
+          <p><strong>Username:</strong> admin@example.com<br>
+          <strong>Password:</strong> Admin123!</p>
+          <p><strong>Tech Stack:</strong> Web technologies, CRUD operations, responsive design</p>
+        </div>
+      `
+    }
+  };
+  
+  const demo = demos[projectId];
+  if (!demo) return;
+  
+  // Create modal
+  const modal = document.createElement('div');
+  modal.className = 'overlay';
+  modal.innerHTML = `
+    <div class="overlay__panel" role="dialog" aria-labelledby="demo-title" aria-modal="true">
+      <div class="overlay__head">
+        <h3 id="demo-title">${demo.title} - Demo Details</h3>
+        <button class="icon-btn demo-close" aria-label="Close">×</button>
+      </div>
+      <div class="demo-body">
+        ${demo.content}
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  modal.hidden = false;
+  
+  // Close handlers
+  const closeBtn = modal.querySelector('.demo-close');
+  const closeModal = () => {
+    document.body.removeChild(modal);
+  };
+  
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
+
+// ----------------- Performance Optimizations -----------------
+function initPerformanceOptimizations() {
+  // Lazy load images
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          img.classList.remove('lazy');
+          observer.unobserve(img);
+        }
+      });
+    });
+    
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Preload critical resources
+  const criticalResources = [
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+  ];
+  
+  criticalResources.forEach(resource => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = resource;
+    link.as = 'style';
+    document.head.appendChild(link);
+  });
+}
+
+// ----------------- Analytics Integration -----------------
+function initAnalytics() {
+  // Google Analytics 4 (replace with your GA4 measurement ID)
+  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with actual ID
+  
+  if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+    // Load GA4
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    document.head.appendChild(script);
+    
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID);
+    
+    // Track social sharing
+    document.querySelectorAll('.share-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const platform = btn.classList.contains('linkedin') ? 'LinkedIn' :
+                        btn.classList.contains('twitter') ? 'Twitter' :
+                        btn.classList.contains('facebook') ? 'Facebook' : 'Copy URL';
+        gtag('event', 'share', {
+          method: platform,
+          content_type: 'portfolio',
+          item_id: 'jethro-kimande-portfolio'
+        });
+      });
+    });
+    
+    // Track project interactions
+    document.querySelectorAll('.project-card .btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const projectName = btn.closest('.project-card').querySelector('h3').textContent;
+        gtag('event', 'project_interaction', {
+          project_name: projectName,
+          action: btn.textContent.trim()
+        });
+      });
+    });
+  }
+}
+
+// ----------------- Theme Toggle -----------------
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  
+  // Get saved theme or default to system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+  
+  // Apply initial theme
+  html.setAttribute('data-theme', initialTheme);
+  updateThemeIcon(initialTheme);
+  
+  // Theme toggle functionality
+  themeToggle?.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+    
+    // Add transition effect
+    html.style.transition = 'all 0.3s ease';
+    setTimeout(() => {
+      html.style.transition = '';
+    }, 300);
+  });
+  
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      const newTheme = e.matches ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      updateThemeIcon(newTheme);
+    }
+  });
+}
+
+function updateThemeIcon(theme) {
+  const themeToggle = document.getElementById('themeToggle');
+  if (!themeToggle) return;
+  
+  const icon = themeToggle.querySelector('i');
+  if (theme === 'dark') {
+    icon.className = 'fas fa-sun';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
+  } else {
+    icon.className = 'fas fa-moon';
+    themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+  }
+}
+
+// ----------------- Enhanced Mobile Navigation -----------------
+function initMobileNavigation() {
+  const navToggle = document.getElementById('nav-toggle');
+  const nav = document.querySelector('.nav');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (!navToggle || !nav || !hamburger) return;
+  
+  navToggle.addEventListener('change', () => {
+    if (navToggle.checked) {
+      nav.style.maxHeight = nav.scrollHeight + 'px';
+      hamburger.style.transform = 'rotate(90deg)';
+    } else {
+      nav.style.maxHeight = '0';
+      hamburger.style.transform = 'rotate(0deg)';
+    }
+  });
+  
+  // Close mobile nav when clicking on links
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.checked = false;
+      nav.style.maxHeight = '0';
+      hamburger.style.transform = 'rotate(0deg)';
+    });
+  });
+  
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target) && !hamburger.contains(e.target) && navToggle.checked) {
+      navToggle.checked = false;
+      nav.style.maxHeight = '0';
+      hamburger.style.transform = 'rotate(0deg)';
+    }
+  });
+}
+
+// ----------------- Initialize Everything -----------------
+document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
+  initMobileNavigation();
+  initContactForm();
+  initPerformanceOptimizations();
+  initAnalytics();
+  
+  // Add smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  // Add scroll-to-top functionality
+  const scrollToTopBtn = document.createElement('button');
+  scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  scrollToTopBtn.className = 'scroll-to-top';
+  scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
+  scrollToTopBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--link);
+    color: white;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
+  
+  document.body.appendChild(scrollToTopBtn);
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.style.opacity = '1';
+    } else {
+      scrollToTopBtn.style.opacity = '0';
+    }
+  });
+  
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});

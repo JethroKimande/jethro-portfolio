@@ -2,10 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Jethro Kimande — Portfolio</title>
+  <title>Jethro Kimande — Machine Learning Engineer & Data Researcher | AI Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Jethro Kimande — Machine Learning Engineer & Data Researcher from Nairobi, Kenya. Portfolio of projects, skills, awards, research impact, and contact." />
+  <meta name="description" content="Jethro Kimande — Machine Learning Engineer & Data Researcher from Nairobi, Kenya. Expert in AI, IoT systems, predictive modeling, and data science. Explore projects, research, and connect for collaborations." />
+  <meta name="keywords" content="machine learning engineer, data scientist, AI researcher, IoT systems, predictive modeling, Python, MATLAB, Nairobi Kenya, artificial intelligence, data analysis" />
+  <meta name="author" content="Jethro Kimande" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jethrokimande.github.io/" />
+  <meta property="og:title" content="Jethro Kimande — Machine Learning Engineer & Data Researcher" />
+  <meta property="og:description" content="Expert in AI, IoT systems, and predictive modeling. Based in Nairobi, Kenya. Explore my portfolio of machine learning projects, research, and technical expertise." />
+  <meta property="og:image" content="https://github.com/JethroKimande.png" />
+  <meta property="og:site_name" content="Jethro Kimande Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://jethrokimande.github.io/" />
+  <meta property="twitter:title" content="Jethro Kimande — Machine Learning Engineer & Data Researcher" />
+  <meta property="twitter:description" content="Expert in AI, IoT systems, and predictive modeling. Based in Nairobi, Kenya. Explore my portfolio of machine learning projects and research." />
+  <meta property="twitter:image" content="https://github.com/JethroKimande.png" />
+  <meta property="twitter:creator" content="@JethroKimande" />
+  
+  <!-- Additional SEO -->
+  <link rel="canonical" href="https://jethrokimande.github.io/" />
+  <meta name="theme-color" content="#61a6ff" />
+  <meta name="msapplication-TileColor" content="#61a6ff" />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jethro Kimande",
+    "jobTitle": "Machine Learning Engineer & Data Researcher",
+    "description": "Expert in AI, IoT systems, and predictive modeling based in Nairobi, Kenya",
+    "url": "https://jethrokimande.github.io/",
+    "image": "https://github.com/JethroKimande.png",
+    "sameAs": [
+      "https://github.com/JethroKimande",
+      "https://www.linkedin.com/in/jethro-kimande-77644195/",
+      "https://www.researchgate.net/profile/Jethro-Kimande"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "Kenya"
+    },
+    "knowsAbout": [
+      "Machine Learning",
+      "Artificial Intelligence", 
+      "Data Science",
+      "IoT Systems",
+      "Predictive Modeling",
+      "Python",
+      "MATLAB",
+      "TensorFlow",
+      "scikit-learn"
+    ],
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Nairobi"
+      },
+      {
+        "@type": "EducationalOrganization", 
+        "name": "Dedan Kimathi University of Technology"
+      }
+    ]
+  }
+  </script>
+  
   <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
@@ -30,6 +104,9 @@
         <a href="#research">Research</a>
         <a href="#repos">Repositories</a>
         <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
         <a class="btn btn--sm" href="assets/JETHRO_KIMANDE_CV_AUG_2025.pdf" download>Download CV</a>
       </nav>
     </div>
@@ -46,6 +123,23 @@
         <div class="cta-row">
           <a class="btn" href="#projects">View Projects</a>
           <a class="btn btn--ghost" href="https://github.com/JethroKimande" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="social-share">
+          <span class="share-label">Share my work:</span>
+          <div class="share-buttons">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://jethrokimande.github.io/" target="_blank" rel="noopener" class="share-btn linkedin" aria-label="Share on LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=Check%20out%20Jethro%20Kimande's%20AI%20portfolio%20featuring%20machine%20learning%20projects%20and%20research&url=https://jethrokimande.github.io/" target="_blank" rel="noopener" class="share-btn twitter" aria-label="Share on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://jethrokimande.github.io/" target="_blank" rel="noopener" class="share-btn facebook" aria-label="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <button class="share-btn copy-url" onclick="copyPortfolioUrl()" aria-label="Copy portfolio URL">
+              <i class="fas fa-link"></i>
+            </button>
+          </div>
         </div>
       </div>
       <div class="hero__avatar">
@@ -287,7 +381,7 @@
       </div>
 
       <div class="grid">
-        <article class="card">
+        <article class="card project-card" data-category="iot automation">
           <header class="card__head">
             <h3>Climate‑IoT LinkedIn Bot</h3>
             <div class="tags">
@@ -295,23 +389,39 @@
             </div>
           </header>
           <p>Automates weekly pollution data posts using satellite APIs, making air‑quality insights more accessible.</p>
+          <div class="project-stats">
+            <span class="stat"><i class="fas fa-calendar-week"></i> Weekly automation</span>
+            <span class="stat"><i class="fas fa-satellite"></i> Satellite data</span>
+          </div>
           <div class="card__links">
-            <a class="link" href="https://github.com/JethroKimande/climate-iot-linkedin-bot" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn--sm" href="https://github.com/JethroKimande/climate-iot-linkedin-bot" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> View Code
+            </a>
+            <button class="btn btn--ghost btn--sm" onclick="showProjectDemo('climate-bot')">
+              <i class="fas fa-play"></i> Demo
+            </button>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card project-card" data-category="web-app">
           <header class="card__head">
             <h3>Property Management System</h3>
             <div class="tags">
               <span class="tag">Web App</span><span class="tag">CRUD</span><span class="tag">Admin</span>
             </div>
           </header>
-          <p>Web application to manage property details and tenant information with a clean admin interface. For exploration Username: admin@example.com
-                password: Admin123!
-            </p>
+          <p>Web application to manage property details and tenant information with a clean admin interface.</p>
+          <div class="project-stats">
+            <span class="stat"><i class="fas fa-users"></i> Multi-tenant</span>
+            <span class="stat"><i class="fas fa-cog"></i> Admin panel</span>
+          </div>
           <div class="card__links">
-            <a class="link" href="https://rent-roll-nexus-admin.onrender.com/" target="_blank" rel="noopener">Live</a>
+            <a class="btn btn--sm" href="https://rent-roll-nexus-admin.onrender.com/" target="_blank" rel="noopener">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <button class="btn btn--ghost btn--sm" onclick="showProjectDemo('property-mgmt')">
+              <i class="fas fa-info-circle"></i> Details
+            </button>
           </div>
         </article>
 
@@ -519,15 +629,98 @@
     </section>
 
     <section id="contact" class="container section">
-      <h2>📬 Contact Me</h2>
-      <form class="contact-form" action="https://formspree.io/f/xvgqbvdw" method="POST">
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
+      <div class="section-head">
+        <h2>📬 Contact Me</h2>
+        <p class="muted">Let's collaborate on AI projects, discuss opportunities, or just say hello!</p>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <p>jethro.kimande@example.com</p>
+              </div>
+            </div>
+            <div class="contact-method">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Location</strong>
+                <p>Nairobi, Kenya</p>
+              </div>
+            </div>
+            <div class="contact-method">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Response Time</strong>
+                <p>Usually within 24 hours</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h4>Connect with me</h4>
+            <div class="social-buttons">
+              <a href="https://github.com/JethroKimande" target="_blank" rel="noopener" class="social-btn github">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/jethro-kimande-77644195/" target="_blank" rel="noopener" class="social-btn linkedin">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.researchgate.net/profile/Jethro-Kimande" target="_blank" rel="noopener" class="social-btn researchgate">
+                <i class="fab fa-researchgate"></i>
+                <span>ResearchGate</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
+        
+        <form class="contact-form" action="https://formspree.io/f/xvgqbvdw" method="POST" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a topic</option>
+              <option value="collaboration">Project Collaboration</option>
+              <option value="job-opportunity">Job Opportunity</option>
+              <option value="consulting">Consulting Services</option>
+              <option value="research">Research Discussion</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project, opportunity, or just say hello!" rows="5" required></textarea>
+            <div class="char-count">
+              <span id="charCount">0</span> / 1000 characters
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button class="btn" type="submit" id="submitBtn">
+              <i class="fas fa-paper-plane"></i>
+              <span>Send Message</span>
+            </button>
+            <div class="form-status" id="formStatus"></div>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
