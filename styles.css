@@ -862,6 +862,8 @@ img {
 @media (max-width: 640px) {
   .container {
     width: min(100%, 98%);
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .hero__text h1 {
     font-size: 1.9rem;
@@ -917,6 +919,10 @@ img {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .hero__text h1 {
     font-size: 1.7rem;
   }
